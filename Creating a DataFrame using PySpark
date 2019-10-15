@@ -1,0 +1,20 @@
+Entering PySpark Shell
+
+Enter the pyspark shell:
+
+pyspark
+
+Import the SparkSession package:
+
+from pyspark.sql import SparkSession
+
+Create the SparkSession:
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+
+The Spark session is created.
+
