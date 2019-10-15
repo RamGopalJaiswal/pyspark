@@ -1,5 +1,7 @@
 Entering PySpark Shell
 
+STEP1: 
+
 Enter the pyspark shell:
 
 pyspark
@@ -16,5 +18,42 @@ spark = SparkSession \
     .config("spark.some.config.option", "some-value") \
     .getOrCreate()
 
+STEP2: 
+
 The Spark session is created.
+
+
+Creating Passenger Instance
+Import the packages:
+
+from pyspark.sql import *
+
+Create a Passenger instance:
+
+Passenger = Row("Name","age","source","destination")
+
+Insert two fields:
+
+p1 = Passenger('David',22,'London','Paris')
+
+p2 = Passenger('Steve',22,'New York','Sydney')
+
+
+STEP 3: 
+
+Creating DataFrame
+PassengerData=[p1,p2]
+
+Convert PassengerData to DataFrame df:
+
+df=spark.createDataFrame(PassengerData)
+
+View the result:
+
+df.show()
+
+Stop the Spark session:
+
+spark.stop()
+
 
